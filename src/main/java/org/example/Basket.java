@@ -72,7 +72,7 @@ public class Basket implements Serializable {
                     loadBasket = new Basket(basket.cart);
                 } else throw new NumberFormatException("Не верный формат файла " + Shop.format);
             } catch (FileNotFoundException e){
-                e.printStackTrace();
+                throw new FileNotFoundException("Сохранений не обнаружено");
             }
         }
         return loadBasket;
